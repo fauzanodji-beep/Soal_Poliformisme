@@ -1,8 +1,6 @@
 ﻿using System;
 
-// =======================
-// OVERLOADING
-// =======================
+
 class ImageProcessor
 {
     // Resize berdasarkan persen
@@ -27,44 +25,9 @@ class ImageProcessor
     }
 }
 
-// =======================
-// OVERRIDING
-// =======================
-class MetodePembayaran
-{
-    public virtual void Bayar(int jumlah)
-    {
-        Console.WriteLine("Melakukan pembayaran sebesar " + jumlah);
-    }
-}
 
-class BankTransfer : MetodePembayaran
-{
-    public override void Bayar(int jumlah)
-    {
-        Console.WriteLine("Pembayaran via Bank Transfer: " + jumlah);
-    }
-}
 
-class EWallet : MetodePembayaran
-{
-    public override void Bayar(int jumlah)
-    {
-        Console.WriteLine("Pembayaran via E-Wallet: " + jumlah);
-    }
-}
 
-class KartuKredit : MetodePembayaran
-{
-    public override void Bayar(int jumlah)
-    {
-        Console.WriteLine("Pembayaran via Kartu Kredit: " + jumlah);
-    }
-}
-
-// =======================
-// MAIN PROGRAM
-// =======================
 class Program
 {
     static void Main()
@@ -77,18 +40,7 @@ class Program
         img.Resize(1920, 1080);
         img.Resize("A4");
 
-        Console.WriteLine("\n=== OVERRIDING ===");
-
-        MetodePembayaran metode;
-
-        metode = new BankTransfer();
-        metode.Bayar(100000);
-
-        metode = new EWallet();
-        metode.Bayar(50000);
-
-        metode = new KartuKredit();
-        metode.Bayar(200000);
+       
     }
 }
 
